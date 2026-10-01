@@ -16,6 +16,21 @@
     --brand-500: #8BAE66;
     --brand-100: #EBD5AB;
   }
+
+  .nav-bar {
+    background-color: var(--brand-900);
+    padding: 1rem;
+  }
+  .nav-button {
+    color: var(--brand-100);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+  }
+  .nav-button:hover {
+    background-color: var(--brand-700);
+  }
 }
 @layer base {
   *, ::after, ::before, ::backdrop, ::file-selector-button {
