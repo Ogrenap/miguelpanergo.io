@@ -11,25 +11,21 @@
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --brand-900: #1B211A;
-    --brand-700: #628141;
-    --brand-500: #8BAE66;
-    --brand-100: #EBD5AB;
-  }
+    
+    --bg-prime: #072202;
+    --bg-secondary: #1e3f23;
 
-  .nav-bar {
-    background-color: var(--brand-900);
-    padding: 1rem;
-  }
-  .nav-button {
-    color: var(--brand-100);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s ease;
-  }
-  .nav-button:hover {
-    background-color: var(--brand-700);
+    --brand-comp: #F5F5DC;
+
+    --brand-700: #125f2d;
+    --brand-500: #277746;
+    --brand-400: #2CB45C;
+    --brand-300: #34D399;
+    --brand-200: #C0FC73;
+
+    --soft-text: #DDFCD6;
+    --text: #f6f6f6;
+    --text-black: #000000;
   }
 }
 @layer base {
@@ -38,7 +34,7 @@
     margin: 0;
     padding: 0;
     border: 0 solid;
-    background-color: var(--brand-900);
+    background-color: var(--bg-prime);
   }
   html, :host {
     line-height: 1.5;
@@ -61,6 +57,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
+    color: var(--text)
+  }
+  .bio{
+    color: var(--soft-text);
+    font-size: 1rem;
   }
   a {
     color: inherit;
@@ -125,6 +126,33 @@
     border-radius: 0;
     background-color: transparent;
     opacity: 1;
+  }
+  .nav-bar {
+    display: fixed;
+    width: full;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    background-color: var(--bg-secondary);
+    color: var(--bg-secondary);
+    padding: 1rem;
+  }
+  .nav-links{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--bg-secondary);
+    padding: 0.5rem 1rem;
+  }
+  .nav-button {
+    color: var(--text-black);
+    background-color: var(--brand-comp);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    &:hover {
+      color: var(--brand-300);
+      transition: color 0.3s ease;
+    }
   }
   :where(select:is([multiple], [size])) optgroup {
     font-weight: bolder;
