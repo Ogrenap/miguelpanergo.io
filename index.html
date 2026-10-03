@@ -11,23 +11,81 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Caveat:wght@700&display=swap" rel="stylesheet">
 
         <link href="./output.css" rel="stylesheet">
-
-
-
     </head>
+
     <body>
-        <nav class="nav-bar">
-            <div class="nav-links">
-                <a href="#" class="nav-button" id="nav-home">Home</a>
-                <a href="#" class="nav-button" id="nav-about">About</a>
-                <a href="#" class="nav-button" id="nav-contact">Contact</a>
-            </div>
-            <div class="nav-links" id="testing">
-                    
-            </div>
-        </nav>
-        <h1 class="title-lg" id="testing-title"> Testing </h1>
-        <br>
-        <p class="bio" id="omg-pls"> Testing 2 </p>
+
+        <div class="site-container">
+            <main class="content">
+
+                <!-- Navigation Bar -->
+                <nav class="nav-bar">
+                    <!-- Containter -->
+                    <div class="nav-container">
+                        <!-- Brand Name -->
+                        <div class="logo">
+                            <a href="https://miguelpanergo.com" id=@home>Miguel Panergo <span class="sub-title-lg"> Professional Voice Actor</span></a>
+                        </div>
+                        <div class="nav-links">
+                            <a href="#about" class="nav-button" id="nav-about">About</a>
+                            <a href="#demos" class="nav-button" id="nav-demos">Demos</a>
+                            <a href="#contact" class="nav-button" id="nav-contact">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- About Section -->
+                <div class="about">
+                    <!-- About Container -->
+                    <div class="about-container">
+                        <div class="about-section">
+                            <h2 class="label"> About <span class="highlight"><span>Miguel!</span></h2>
+                            <p class="bio"> Miguel Panergo is a professional voice actor who is just "aight" but he's trying I guess. Also this is still a work in progress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demos Section -->
+                <div class="demos" id="demos">   
+                    <div class="demos-container">
+                        <div class="audio-container">
+
+
+                        
+                            <div class="audio-player" id="animation-demo">
+                                <h3 class="label-sm">Animation Demo</h3>
+                                <audio controls class="audio-controls">
+                                    <source src="demos/Miguel Animation Demo V.2.2.mp3" type="audio/mpeg"> 
+                                </audio>
+                            </div>
+                            <div class="audio-player" id="animation-demo">
+                                <h3 class="label-sm">Placeholder Demo</h3>
+                                <audio controls class="audio-controls">
+                                    <source src="" type="audio/mpeg"> 
+                                </audio>
+                            </div>
+                        </div>
+
+                        <div class="equipment-container">
+                            <!-- Equipment content goes here -->
+                             <h2 class="label">Equipment</h2>
+                             <p class="sub-label"> NOTHING</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="contact" id="contact">
+                    <div class="contact-container">
+                        <h2 class="title-lg" id="testing-title-3"> Adventure Starts Here </h2>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+
     </body>
+
 </html>
