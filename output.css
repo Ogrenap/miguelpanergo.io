@@ -45,8 +45,9 @@
     --padding-medium: 1rem;
     --padding-large: 2rem;
 
-    /* Content Width */
-    --content-width: 1200px;
+    /* Width */
+    --max-content-width: 1200px;
+    --min-content-width: 360px;
     --min-page-width: 390px;
 
     /* Animations */
@@ -234,7 +235,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: var(--content-width);
+    max-width: var(--max-content-width);
     margin: 0 auto;
   }
   .logo{
@@ -292,7 +293,7 @@
   .about-container {
     display: flex;
     justify-content: center;
-    max-width: var(--content-width);
+    max-width: var(--max-content-width);
     margin: 0 auto;
     padding: var(--padding-large);
   }
@@ -311,8 +312,9 @@
   }
   .demos-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    max-width: var(--content-width);
+    max-width: var(--max-content-width);
     padding: var(--padding-large);
     gap: var(--padding-medium);
     margin: 0 auto;
@@ -320,9 +322,11 @@
 
   .audio-container{
     display: flex;
+    flex: 0;
     flex-direction: column;
     justify-content: left;
     max-width: 40%;
+    min-width: var(--min-content-width);
     background-color: var(--bg-second);
     border-radius: 2rem;
 
@@ -331,10 +335,12 @@
   /* Equipment Container 
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .equipment-container{
-  
+    display: flex;
+    flex-direction: column;
     justify-content: right;
     max-width: 60%;
     background-color: var(--bg-second);
+    min-width: var(--min-content-width);
     border-radius: 2rem;
     padding: var(--padding-medium);
 
@@ -380,7 +386,7 @@
   .contact-container {
     display: flex;
     justify-content: center;
-    max-width: var(--content-width);
+    max-width: var(--max-content-width);
     margin: 0 auto;
     padding: var(--padding-large);
   }
