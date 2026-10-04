@@ -49,9 +49,10 @@
     --content-width: 1200px;
 
     /* Animations */
-    --slideInLeft: slideInLeft 1s ease-in-out;
-    --slideInRight: slideInRight 1s ease-in-out;
-    --fadeIn: fadeIn 1s ease-in-out;
+    --slideInLeft: slideInLeft 2s ease-in-out ;
+    --slideInRight: slideInRight 2s ease-in-out ;
+    --fadeIn: fadeIn 1s;
+    --slideInDown: slideInDown 1s ease-in-out;
 
     --image: var(--);
   }
@@ -60,7 +61,7 @@
 /* Animations Keyframes */
 @keyframes slideInLeft {
   from {
-    transform: translateX(-30px);
+    transform: translateX(-100px);
     opacity: 0;
   }
   to {
@@ -83,6 +84,16 @@
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+@keyframes slideInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -130,7 +141,25 @@
     color: inherit;
     border-top-width: 1px;
   }
-  h2, h3, h4, h5, h6 {
+  h1 {
+    font-size: var(--size-text-lg);
+    color: var(--soft-text);
+    font-family:"Bitter",monospace;
+    font-weight: var(--font-weight-bold);
+  }
+  h2 {
+    font-size: var(--size-title-lg);
+    font-weight: inherit;
+    color: var(--text)
+  }
+  h3 {
+    font-size: var(--size-title-md);
+    color: var(--soft-text);
+    font-family:"Bitter",monospace;
+    font-weight: var(--font-weight-bold);
+    text-shadow: 2px 2px 1px var(--brand-500);
+  }
+  h4, h5, h6 {
     font-size: var(--size-title-lg);
     font-weight: inherit;
     color: var(--text)
@@ -153,7 +182,7 @@
     font-weight: var(--font-weight);
     font-family: "Young Serif", sans-serif;
   }
-  .sub-title-lg {
+  .sub-title-lg{
     font-size: var(--size-text-lg);
     color: var(--soft-text);
     font-family:"Bitter",monospace;
@@ -161,19 +190,19 @@
   }
 
   .label{
-    text-shadow: 2px 2px 4px var(--bg-prime);
     font-size: var(--size-title-lg);
     color: var(--text);
     font-family: "Young Serif", sans-serif;
+    text-shadow: 2px 2px 2px var(--bg-prime);
   }
   .sub-label{
-    font-size: var(--size-text-md);
+    font-size: var(--size-text-lg);
     color: var(--soft-text);
     font-family: "Bitter", monospace;
   }
 
   .label-sm{
-    font-size: var(--size-title-sm);
+    
     color: var(--soft-text);
     font-family: "Young Serif", sans-serif;
   }
@@ -201,24 +230,39 @@
   }
   .nav-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: var(--content-width);
     margin: 0 auto;
   }
   .logo{
+    display: flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content: center;
+    gap: 0.5rem;
     font-size: var(--size-title-lg);
     font-weight: var(--font-weight);
     font-family: "Young Serif", serif;
-    text-shadow: 2px 2px 4px var(--brand-700);
+    text-shadow: 2px 2px 2px var(--brand-500);
     color: var(--brand-comp);
     animation: var(--slideInLeft);
+    @media (max-width: 975px) {
+      flex: auto;
+    }
   }
   .nav-links{
     display: flex;
+    flex: none;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     padding: 0.5rem 1rem;
-    animation:var(--slideInRight);
+    animation: var(--slideInRight);
+
+    @media (max-width: 975px) {
+      flex: auto;
+    }
   }
   .nav-button {
     color: var(--text-black);
@@ -240,6 +284,7 @@
   .about{
     width: 100%;
     background-color: var(--bg-second);
+    margin: 0 auto;
   }
   .about-container {
     display: flex;
@@ -250,7 +295,6 @@
   }
   .about-section{
     background-color: var(--bg-third);
-    max-width: 60%;
     justify-content: left;
     border-radius:1rem;
     padding: 1rem;
@@ -278,8 +322,11 @@
     max-width: 40%;
     background-color: var(--bg-second);
     border-radius: 2rem;
+
   }
 
+  /* Equipment Container 
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .equipment-container{
   
     justify-content: right;
@@ -288,6 +335,11 @@
     border-radius: 2rem;
     padding: var(--padding-medium);
 
+
+  }
+
+  .single-equipment{
+    padding: var(--padding-medium);
   }
 
   /* Audio
