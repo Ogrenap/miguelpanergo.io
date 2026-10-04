@@ -47,7 +47,7 @@
 
     /* Content Width */
     --content-width: 1200px;
-    --min-page-width: 480px;
+    --min-page-width: 360px;
 
     /* Animations */
     --slideInLeft: slideInLeft 2s ease-in-out ;
