@@ -237,6 +237,7 @@
   }
   .logo{
     display: flex;
+    flex: none;
     flex-wrap:wrap;
     align-items:baseline;
     justify-content: center;
