@@ -24,12 +24,14 @@
     --size-title-sm: 1.25rem; /* 20px */
     
     /* Colors */
-    --bg-prime: #072202;
-    --bg-second: #154407;
-    --bg-third: #125f2d;
+    --bg-foot-head: #072202;
+    --bg-prime: #154407;
+    --bg-second: #125f2d;
 
     /* Brand (temp) */
-    --brand-comp: #F5F5DC;
+    --comp-beige: #F5F5DC;
+    --comp-gold: #FFD700;
+    --pulse-gold: #B59410;
     --brand-500: #1e8642;
     --brand-400: #2ab059;
     --brand-300: #37dc70;
@@ -47,6 +49,8 @@
 
     /* Width */
     --max-content-width: 1200px;
+    --third-content-width: calc(var(--max-content-width) / 3);
+    --half-content-width: calc(var(--max-content-width) / 2);
     --min-content-width: 360px;
     --min-page-width: 390px;
 
@@ -55,6 +59,7 @@
     --slideInRight: slideInRight 2s ease-in-out ;
     --fadeIn: fadeIn 1s;
     --slideInDown: slideInDown 1s ease-in-out;
+
 
     --image: var(--);
   }
@@ -181,9 +186,10 @@
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .title-lg {
     font-size: var(--size-title-lg);
-    color: var(--text);
+    color: inherit;
     font-weight: var(--font-weight);
     font-family: "Young Serif", sans-serif;
+    text-shadow: inherit;
   }
   .sub-title-lg{
     font-size: var(--size-text-lg);
@@ -196,7 +202,7 @@
     font-size: var(--size-title-lg);
     color: var(--text);
     font-family: "Young Serif", sans-serif;
-    text-shadow: 2px 2px 2px var(--bg-prime);
+    text-shadow: 2px 2px 2px var(--bg-foot-head);
   }
   .sub-label{
     font-size: var(--size-text-lg);
@@ -205,9 +211,14 @@
   }
 
   .label-sm{
-    
     color: var(--soft-text);
     font-family: "Young Serif", sans-serif;
+  }
+
+  .footer-text{
+    color: var(--brand-500);
+    font-size: var(--size-text);
+    font-family: "Bitter", monospace;
   }
 
   .bio{
@@ -226,8 +237,7 @@
     width: 100%;
     z-index: 50;
     backdrop-filter: blur(10px);
-    background-color: var(--bg-prime);
-    color: var(--bg-prime);
+    background-color: var(--bg-foot-head);
     padding-inline: var(--padding-large);
     padding-block: var(--padding-small);
   }
@@ -249,7 +259,7 @@
     font-weight: var(--font-weight);
     font-family: "Young Serif", serif;
     text-shadow: 2px 2px 2px var(--brand-500);
-    color: var(--brand-comp);
+    color: var(--comp-beige);
     animation: var(--slideInLeft);
     @media (max-width: 975px) {
       flex: auto;
@@ -270,13 +280,13 @@
   }
   .nav-button {
     color: var(--text-black);
-    background-color: var(--brand-comp);
+    background-color: var(--comp-beige);
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.2s ease-out;
     &:hover{
-      background-color: var(--brand-200);
+      background-color: var(--comp-gold);
       transform: scale(1.1);
       transition: all 0.2s ease-out 0.1s;
     }
@@ -287,7 +297,7 @@
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .about{
     width: 100%;
-    background-color: var(--bg-second);
+    background-color: var(--bg-prime);
     margin: 0 auto;
   }
   .about-container {
@@ -298,7 +308,7 @@
     padding: var(--padding-large);
   }
   .about-section{
-    background-color: var(--bg-third);
+    background-color: var(--bg-second);
     justify-content: left;
     border-radius:1rem;
     padding: 1rem;
@@ -307,7 +317,7 @@
   /* Demos Section
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .demos{
-      background-color: var(--bg-third);
+      background-color: var(--bg-second);
       width: 100%;
   }
   .demos-container {
@@ -325,9 +335,9 @@
     flex: 0;
     flex-direction: column;
     justify-content: left;
-    max-width: 40%;
+    width:var(--third-content-width);
     min-width: var(--min-content-width);
-    background-color: var(--bg-second);
+    background-color: var(--bg-prime);
     border-radius: 2rem;
 
   }
@@ -338,8 +348,8 @@
     display: flex;
     flex-direction: column;
     justify-content: right;
-    max-width: 60%;
-    background-color: var(--bg-second);
+    max-width:var(--half-content-width);
+    background-color: var(--bg-prime);
     min-width: var(--min-content-width);
     border-radius: 2rem;
     padding: var(--padding-medium);
@@ -348,7 +358,10 @@
   }
 
   .single-equipment{
-    padding: var(--padding-medium);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: var(--padding-small);
   }
 
   /* Audio
@@ -358,7 +371,7 @@
   }
 
   ::-webkit-media-controls-panel {
-    background-color: var(--brand-comp);
+    background-color: var(--comp-beige);
     border-radius: 2rem;
   }
   ::-webkit-media-controls-play-button {
@@ -378,18 +391,83 @@
 
 
 
+  /* Find Me Section
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  .find-me{
+    background-color: var(--bg-prime);
+  }
+  .find-me-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: var(--max-content-width);
+    color: var(--comp-beige);
+    margin: 0 auto;
+    padding: var(--padding-large);
+  }
+
+  .social-links {
+    display: flex;
+    color: var(--comp-beige);
+    background-color: transparent;
+    transition: all 0.2s ease-out;
+    @media (min-width: 360px) {
+      zoom: 2.5;
+    }
+  }
+
+  .social-link {
+    overflow: visible;
+    background-color:transparent;
+    transition: all 0.2s ease-out;
+    &:hover{
+      color: var(--comp-gold);
+      transform: scale(1.1);
+      transition: all 0.2s ease-out 0.1s;
+    }
+  }
+
   /* Contact Section
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .contact{
-    background-color: var(--brand-200);
+    background-color: var(--bg-foot-head);
   }
   .contact-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     max-width: var(--max-content-width);
     margin: 0 auto;
     padding: var(--padding-large);
   }
+  .contact-label{
+    display: flex;
+    align-items: center;
+    color: var(--comp-gold);
+    margin: 0 auto;
+    text-shadow: 2px 2px 4px var(--brand-500);
+  }
+  .contact-form {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--bg-prime);
+  }
+
+  /* Footer Section
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  .footer{
+    background-color: var(--bg-foot-head);
+    border-top: 1px solid var(--bg-prime);
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: var(--padding-medium);
+
+  }
+
 
   /* Defaults
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
