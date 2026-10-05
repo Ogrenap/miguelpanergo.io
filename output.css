@@ -334,12 +334,24 @@
     display: flex;
     flex: 0;
     flex-direction: column;
-    justify-content: left;
-    width:var(--third-content-width);
+    justify-content: flex-start;
+    max-width:var(--third-content-width);
     min-width: var(--min-content-width);
     background-color: var(--bg-prime);
     border-radius: 2rem;
+    @media (max-width: 963px) {
+      max-width: var(--half-content-width);
+      flex: 0 auto;
+      flex-direction: column;
+      justify-content: flex-end;
 
+    }
+  }
+
+  .hug-right{
+    @media (max-width: 963px) {
+      justify-content: flex-end;
+    }
   }
 
   /* Equipment Container 
@@ -387,6 +399,13 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    @media (max-width: 963px) {
+      flex: auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: var(--padding-small);
+    }
   }
 
 
