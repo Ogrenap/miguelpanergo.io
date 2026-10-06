@@ -57,7 +57,7 @@
     /* Animations */
     --slideInLeft: slideInLeft 2s ease-in-out ;
     --slideInRight: slideInRight 2s ease-in-out ;
-    --fadeIn: fadeIn 1s;
+    --fadeIn: fadeIn 3s;
     --slideInDown: slideInDown 1s ease-in-out;
 
 
@@ -76,8 +76,7 @@
     opacity: 1;
   }
 }
-@keyframes slideInRight {
-  from {
+@keyframes slideInRight {  from {
     transform: translateX(30px);
     opacity: 0;
   }
@@ -139,6 +138,7 @@
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .site-container {
     animation: var(--fadeIn);
+    animation-duration:1s;
     padding:  0;
   }
 
@@ -306,6 +306,8 @@
     max-width: var(--max-content-width);
     margin: 0 auto;
     padding: var(--padding-large);
+    animation: var(--fadeIn);
+
   }
   .about-section{
     background-color: var(--bg-second);
@@ -328,6 +330,8 @@
     padding: var(--padding-large);
     gap: var(--padding-medium);
     margin: 0 auto;
+    animation: var(--fadeIn);
+
   }
 
   .audio-container{
@@ -378,9 +382,6 @@
 
   /* Audio
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-  .play{
- 
-  }
 
   ::-webkit-media-controls-panel {
     background-color: var(--comp-beige);
@@ -423,6 +424,8 @@
     color: var(--comp-beige);
     margin: 0 auto;
     padding: var(--padding-large);
+    animation: var(--fadeIn);
+
   }
 
   .social-links {
@@ -430,6 +433,7 @@
     color: var(--comp-beige);
     background-color: transparent;
     transition: all 0.2s ease-out;
+    gap: var(--padding-small);
     @media (min-width: 360px) {
       zoom: 2.5;
     }
@@ -458,6 +462,8 @@
     max-width: var(--max-content-width);
     margin: 0 auto;
     padding: var(--padding-large);
+    animation: var(--fadeIn);
+
   }
   .contact-label{
     display: flex;
