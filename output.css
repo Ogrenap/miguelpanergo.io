@@ -26,7 +26,7 @@
     /* Colors */
     --bg-foot-head: #072202;
     --bg-prime: #154407;
-    --bg-second: #125f2d;
+    --bg-second: #145705;
 
     /* Brand (temp) */
     --comp-beige: #F5F5DC;
@@ -60,6 +60,12 @@
     --fadeIn: fadeIn 3s;
     --slideInDown: slideInDown 1s ease-in-out;
 
+    /* Background images */
+    --forest-path: url(resources/green-jungle-nature-background-with-lots-of-tress-plants-and-sun-rays-touching-the-plants-and-trees-vector.jpg);
+    --layered-forest:url(resources/vecteezy_landscape-illustration-of-deep-forest_52728794.jpg);
+    --golden-lights:url(resources/green-background-with-golden-highlights-with-bokeh-effect-vector.jpg);
+
+    --blur: blur(100px);
 
     --image: var(--);
   }
@@ -130,8 +136,8 @@
   /* Content
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .content {
-    background-color: var(--brand-200);
     min-width:var(--min-page-width);
+    background-color: var(--brand-500);
   }
 
   /* Site Containers
@@ -298,7 +304,23 @@
   .about{
     width: 100%;
     background-color: var(--bg-prime);
+    /* background-image: var(--forest-path);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat; */
     margin: 0 auto;
+    overflow: hidden;
+  }
+  .blurred-about {
+    position: absolute;
+    color: var(--comp-beige);
+    top: 10%;
+    left: center;
+    width: 300px;
+    height: 300px;
+    background:  radial-gradient(circle, var(--comp-gold), var(--brand-200));
+    opacity: 0.30;
+    filter: var(--blur);
   }
   .about-container {
     display: flex;
@@ -307,7 +329,7 @@
     margin: 0 auto;
     padding: var(--padding-large);
     animation: var(--fadeIn);
-
+    overflow:hidden;
   }
   .about-section{
     background-color: var(--bg-second);
@@ -319,7 +341,11 @@
   /* Demos Section
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .demos{
-      background-color: var(--bg-second);
+    background-color: var(--bg-second);
+      /* background-image: var(--layered-forest);
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat; */
       width: 100%;
   }
   .demos-container {
@@ -452,9 +478,28 @@
 
   /* Contact Section
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-  .contact{
+  .contact {
+    position: relative;
+    overflow: hidden;
     background-color: var(--bg-foot-head);
   }
+
+  .contact::before {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: var(--golden-lights);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: var(--golden-lights);
+    filter: blur(10px);
+  }
+  .contact > * {
+    position: relative;
+    z-index: 1;
+  }
+  
   .contact-container {
     display: flex;
     flex-direction: column;
@@ -493,6 +538,11 @@
 
   }
 
+  /* Effects
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  .blur {
+    filter: var(--blur);
+  }
 
   /* Defaults
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
