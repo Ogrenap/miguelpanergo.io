@@ -24,26 +24,64 @@
                     <div class="nav-container">
                         <!-- Brand Name -->
                         <div class="logo">
-                            <a href="https://miguelpanergo.com">Miguel </a>
-                            <a href="https://miguelpanergo.com">Panergo</a>
-                            <h1 class="sub-litle-lg">Professional Voice Actor</h1>
+                            <a href="https://miguelpanergo.com" class="title-lg">Miguel </a>
+                            <a href="https://miguelpanergo.com" class="title-lg">Panergo</a>
                         </div>
                         <div class="nav-links">
-                            <a href="#about" class="nav-button" id="nav-about">About</a>
                             <a href="#demos" class="nav-button" id="nav-demos">Demos</a>
+                            <a href="#about" class="nav-button" id="nav-about">About</a>
+                            
                             <a href="#contact" class="nav-button" id="nav-contact">Contact</a>
                         </div>
                     </div>
                 </nav>
 
+                <!-- Hero Section -->
+                <div class="hero">
+                    <div class="hero-container">
+                        <p class="hero-super"> CHARACTERS   COMMERCIALS     STORYTELLING</p>
+                            <h1 class="BIGGER"> Professional Voice Actor</h1>
+
+                        <p class="bio"> Versitile. Expressive. Genuine.
+                            <br>
+                            Inbuing characters with energy, heart and love for the craft.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="demos">
+                    <div class="demos-container container">
+                        <h2 class="label-demo"> Hear me in <span class="highlight-light"><span> action </span></h2>
+                        <div class="audio-container">
+                                <div class="audio-player" id="animation-demo">
+                                    <h3 class="label-sm">Animation Demo</h3>
+                                    <audio controls class="audio-controls">
+                                        <source src="demos/Miguel Animation Demo V.2.2.mp3" type="audio/mpeg"> 
+                                    </audio>
+                                </div>
+                                <div class="audio-player" id="commercial-demo">
+                                    <h3 class="label-sm">Commercial Demo (Planned!)</h3>
+                                    <audio controls class="audio-controls">
+                                        <source src="" type="audio/mpeg"> 
+                                    </audio>
+                                </div>
+                                <div class="audio-player" id="home-studio-sample">
+                                    <h3 class="label-sm">Home Studio Sample</h3>
+                                    <audio controls class="audio-controls">
+                                        <source src="" type="audio/mpeg"> 
+                                    </audio>
+                                </div>
+                            </div>
+                    </div>
+                </div>
                 <!-- About Section -->
                 <div class="about">
                     <!-- About Container -->
-                    <div class="about-container">
-                        <div class="blurred-about"></div>
+                    <div class="about-container container">
+
                         <div class="about-section">
                         
-                            <h2 class="label"> About <span class="highlight"><span>Miguel!</span></h2>
+                            <h2 class="label"> About <span class="highlight-dark"><span>Miguel!</span></h2>
                             <p class="bio">
                                 Miguel Panergo is a professional voice actor based in Vancouver, Canada. With a background of Computer Science, Miguel is a versatile performer
                                 who analyzes scripts and characters to truly understand them, connecting them to himself so that he can authentically bring them to life.
@@ -63,48 +101,15 @@
                                 the crowd and surprising you with his passion when you least expect it.
                             </p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Demos Section -->
-                <div class="demos" id="demos">   
-                    <div class="demos-container">
-                        <div class="audio-container">
-                            <!--  
-                            
-                            SUGGESTION:
-                            Change the background from bg-second to comp-beige
-                            or the inner background from bg-prime to comp biege
-                                See if it makes it better
-                            
-                            -->
-
-                        
-                            <div class="audio-player" id="animation-demo">
-                                <h3 class="label-sm">Animation Demo</h3>
-                                <audio controls class="audio-controls">
-                                    <source src="demos/Miguel Animation Demo V.2.2.mp3" type="audio/mpeg"> 
-                                </audio>
-                            </div>
-                            <div class="audio-player" id="commercial-demo (Planned!)">
-                                <h3 class="label-sm">Commercial Demo</h3>
-                                <audio controls class="audio-controls">
-                                    <source src="" type="audio/mpeg"> 
-                                </audio>
-                            </div>
-                            <div class="audio-player" id="home-studio-sample">
-                                <h3 class="label-sm">Home Studio Sample</h3>
-                                <audio controls class="audio-controls">
-                                    <source src="" type="audio/mpeg"> 
-                                </audio>
-                            </div>
-                        </div>
 
                         <div class="equipment-container">
                             <!-- Equipment content goes here -->
                             <h2 class="label">Equipment</h2>
                             <div class="single-equipment" id="mic">
-                                <h3 class="label-sm">Microphone</h3>
+                                <div class="equipment-label">
+                                    <img class="icons" src="icons/microphone-lines-solid-full.svg"> </img>
+                                    <h3 class="label-sm">Microphone</h3>
+                                </div>
                                 <p class="sub-label"> Audio Technica AT-2020 </p>
                             </div>
                             <div class="single-equipment" id="audio-interface">
@@ -124,11 +129,16 @@
                                 <p class="sub-label"> DIY booth with room dividers and moving blankets </p>
                             </div>
                         </div>
+                    </div>
+                    </div>
+
+                    
                 </div>
+
 
                 <!-- Find Me Section -->
                 <div class="find-me" id="find-me">
-                    <div class="find-me-container">
+                    <div class="find-me-container container">
                         <h2 class="label" id="testing-title-4"> Find Me Here </h2>
                         <div class="social-links">
                             <a href="https://www.youtube.com/@Ogrenap" class="fa-brands fa-youtube social-link"></a>
