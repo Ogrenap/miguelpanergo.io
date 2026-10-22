@@ -411,6 +411,12 @@
     gap: var(--padding-large);
     justify-content: center;
     animation: var(--fadeIn);
+    @media (max-width: 963px) {
+      max-width: var(--half-content-width);
+      flex: 0 auto;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
   }
   .about-section{
     justify-content: left;
@@ -469,6 +475,7 @@
   .equipment-container{
     position: static;
     display: flex;
+    max-height:fit-content;
     flex-direction: column;
     justify-content: right;
     max-width:var(--half-content-width);
@@ -480,7 +487,6 @@
   .equipment-container-background {
     content: "";
     position: static;
-    height: 400px;
     overflow: hidden;
     inset: 0;
     z-index: 0;
@@ -582,6 +588,7 @@
     position: relative;
     overflow: hidden;
     background-color: var(--bg-foot-head);
+    padding: var(--padding-large);
   }
 
   .contact::before {
@@ -616,8 +623,49 @@
   }
   .contact-form {
     display: flex;
+    max-width: max-content;
+    flex: wrap;
+    flex-direction: column;
     gap: 1rem;
     background-color: var(--bg-prime);
+    margin: var(--padding-medium) auto;
+    padding: var(--padding-medium);
+    border-radius: 4px;
+  }
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-medium);
+  }
+  .form-row{
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding-medium);
+    color: var(--comp-gold);
+    font-size: var(--size-text-sm);
+  }   
+  .form-group input[type="text"], .form-group input[type="email"], .form-group textarea {
+    padding: var(--padding-small);
+    border-radius: 4px;
+    border: 1px solid var(--comp-beige);
+    background-color: var(--bg-second);
+    color: var(--comp-beige);
+  }
+  .submit-btn {
+    align-items: center;
+    padding: var(--padding-small) var(--padding-medium);
+    border-radius: 4px;
+    border: none;
+    background-color: var(--comp-gold);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    &:hover{
+      background-color: var(--pulse-gold);
+      transform: scale(1.1);
+      transition: all 0.2s ease-out 0.1s;
+    }
   }
 
   /* Footer Section
