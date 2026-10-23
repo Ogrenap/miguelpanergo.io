@@ -609,6 +609,7 @@
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .find-me{
     background-color: var(--bg-prime);
+    width: 100%
   }
   .find-me-container {
     display: flex;
@@ -647,6 +648,7 @@
     overflow: hidden;
     background-color: var(--bg-foot-head);
     padding: var(--padding-large);
+     width: 100%
   }
 
   .contact::before {
@@ -742,6 +744,7 @@
   .footer{
     background-color: var(--bg-foot-head);
     border-top: 1px solid var(--bg-prime);
+        width: 100%
   }
   .footer-container {
     display: flex;
