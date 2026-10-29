@@ -46,7 +46,7 @@
 
     /* Padding */
     --padding-small: 0.5rem;
-    --padding-medium: 1rem;
+    --padding-medium: 1rem; 
     --padding-large: 2rem;
 
     /* Width */
@@ -457,7 +457,6 @@
   .demos-container {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     align-items: center;
     justify-content: center;
     max-width: var(--two-thirds-content-width);
@@ -534,7 +533,8 @@
     align-items: center;
     gap: var(--padding-medium);
     border-radius: 1rem;
-    max-width: var(--max-content-width);
+    width: 100%;
+    margin: none;
     padding: var(--padding-medium);
     background-color: var(--bg-second);
     @media (max-width: 963px) {
@@ -548,14 +548,16 @@
     display: flex;
     flex-wrap: wrap;
     flex: 1 1 auto;
+    justify-content: space-between;
+    align-items: center;
   }
   .audio-title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: end;
     flex: 1 1 auto;
-    color: var(--comp-beige)
+    color: var(--comp-beige);
   }
 
   .eq{
@@ -570,7 +572,8 @@
   }
   .eq span {
   width: 6px; height: 100%;
-  background: var(--comp-beige); border-radius: 3px;
+  background: var(--comp-beige); 
+  border-radius: 3px;
   transform-origin: bottom;
   animation: eq-pump 1s ease-in-out infinite;
   }
@@ -584,6 +587,8 @@
   }
 
   .time-display{
+    display: flex;
+    width: 100px;
     color: var(--soft-text);
     font-size: var(--size-text-lg);
     font-family: "Quicksand", sans-serif;
@@ -599,6 +604,17 @@
     flex: 1 1 auto;
     width: 100%;
   }
+  
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: var(--bg-prime);
+    border-radius: 9999px;
+    overflow: hidden;
+}
 
   .other-controls{
     display: flex;
@@ -614,79 +630,55 @@
   .volume-container{
     display: flex;
     align-items: center;
-    gap: --padding var(--padding-small);
+    gap: var(--padding-small);
+
+    &:hover .volume-slider-container{
+      width: 80px ;
+      opacity: 100%;
+
+      transition: all 300ms ease-in-out;
+    }
+
+    &:focus .volume-slider-container{
+      width: 80px ;
+      opacity: 100%;
+
+      transition: all 300ms ease-in-out;
+    }
   }
   .volume-btn{
-    font-size: 1.5rem;
-    padding: var(--padding-small);
+    font-size: 1.25rem;
+    color: black;
     &:focus{
       outline: none;
       position: relative;
       z-index: 10;
     }
     &:hover{
-      color: var(--soft-lime);
+      color: var(--brand-500);
+      transform: scale(1.1);
+      transition: all 0.2s ease-out 0.1s;
     }
   }
   .volume-slider-container{
     display: flex;
-    width: 0;
-    opacity: 0;
     overflow: hidden;
+    width: 8px;
+    opacity: 0;
     align-items: center;
-    @media (hover: hover) {
-      .group-hover\:w-20:is(:where(.group):hover *) {
-        width: calc(var(--spacing) * 20) /* 5rem = 80px */;
-      }
-      .group-hover\:opacity-100:is(:where(.group):hover *) {
-        opacity: 100%;
-      }
-      .group-hover\:ml-2:is(:where(.group):hover *) {
-        margin-left: calc(var(--spacing) * 2) /* 0.5rem = 8px */;
-      }
-      .group-focus-within\:w-20:is(:where(.group):focus-within *) {
-    width: calc(var(--spacing) * 20) /* 5rem = 80px */;
-    }
-    .group-focus-within\:opacity-100:is(:where(.group):focus-within *) {
-    opacity: 100%;
-    }
-    .group-focus-within\:ml-2:is(:where(.group):focus-within *) {
-    margin-left: calc(var(--spacing) * 2) /* 0.5rem = 8px */;
-    }
-    .transition-all {
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function) /* cubic-bezier(0.4, 0, 0.2, 1) */);
-    transition-duration: var(--tw-duration, var(--default-transition-duration) /* 150ms */);
-    }
-    .duration-300 {
-
-      transition-duration: 300ms;
-    }
-
-    .ease-out {
-
-      transition-timing-function: var(--ease-out) /* cubic-bezier(0, 0, 0.2, 1) */;
-    }
-    }
-    
-    &:hover{
-      width: 80px ;
-      opacity: 100%;
-      margin-left: 8px /* 0.5rem = 8px */;
-      transition: all 300ms ease-in-out;
-    }
-    &:focus{
-      width: 80px;
-      opacity: 100%;
-      margin-left: 8px;
-      transition: all 300ms ease-in-out;
-    }
-    transition: all 300ms ease-in-out;
+    border: none;
+    height: 20px;
+    transition: all 0.5s ease-in-out 0.5s;
+   
   }
   .volume-slider{
     width: 100%;
+    height: 8px;
+    border: none;
   }
   .download-btn{
+    font-size: 1.25rem;
+    padding: var(--padding-small);
     border-color: var(--bg-second);
     transition: all 0.2s ease-out;
     &:hover{

@@ -46,7 +46,6 @@ demos.forEach((demo) => {
                             <div>
                                 <div class="audio-title">
                                     <h3 class="label-sm">${demo.title}</h3>
-                                    <!-- Audio-Reactive Equalizer Bars -->
                                     <div id="eq-${demo.id}" class="eq
                                     // eq-bars opacity-0 transition-opacity duration-300
                                     " aria-hidden="true">
@@ -68,8 +67,8 @@ demos.forEach((demo) => {
                     <!-- Desktop-Only Volume & Download Controls (Hidden on Mobile via hidden md:flex) -->
                     <div class="other-controls">
                         <div class="volume-container">
-                            <button id="mute-btn-${demo.id}" class=volume-btn" title="Mute/Unmute">
-                                <i class="fas" id="vol-icon-${demo.id}"></i>
+                            <button id="mute-btn-${demo.id}" class="volume-btn" title="Mute/Unmute">
+                                <i class="fa-solid fa-volume-high" id="vol-icon-${demo.id}"></i>
                             </button>
                             <div class=" volume-slider-container
                             //w-0 opacity-0 overflow-hidden group-hover:w-20 group-hover:opacity-100 group-hover:ml-2 group-focus-within:w-20 group-focus-within:opacity-100 group-focus-within:ml-2 transition-all duration-300 ease-out flex items-center
@@ -80,7 +79,7 @@ demos.forEach((demo) => {
                         
                         <a href="${demo.url}" download class="download-btn" title="Download MP3 (Desktop Only)">
                             <i class="fas">&#xf56d;</i>
-                            <span>MP3</span>
+                            <span></span>
                         </a>
                     </div>
                     
@@ -116,7 +115,7 @@ demos.forEach(demo => {
                 timeDisplay.innerText = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
                 
                 const percentage = (audio.currentTime / audio.duration) * 100;
-                seekBar.style.background = `linear-gradient(to right, #10b981 ${percentage}%, #1b2845 ${percentage}%)`;
+                seekBar.style.background = `linear-gradient(to right, #c1ff72 ${percentage}%, #1e8642 ${percentage}%)`;
             });
 
             playBtn.addEventListener('click', () => {
@@ -124,7 +123,7 @@ demos.forEach(demo => {
                     currentAudioElement.pause();
                     const oldId = currentAudioElement.id.replace('audio-', '');
                     document.getElementById(`icon-${oldId}`).className = 'fa-solid fa-play ml-1';
-                    document.getElementById(`eq-${oldId}`).classList.remove('opacity-100');
+                    document.getElementById(`eq-${oldId}`).classList.toggle('opacity-100');
                     currentContainer.classList.remove('player-active');
                 }
 
@@ -132,14 +131,14 @@ demos.forEach(demo => {
                     audio.play();
                     playIcon.className = 'fa-solid fa-pause';
                     container.classList.add('player-active');
-                    eqIndicator.classList.add('opacity-100');
+                    eqIndicator.classList.toggle('opacity-100');
                     currentAudioElement = audio;
                     currentContainer = container;
                 } else {
                     audio.pause();
                     playIcon.className = 'fa-solid fa-play ml-1';
                     container.classList.remove('player-active');
-                    eqIndicator.classList.remove('opacity-100');
+                    eqIndicator.classList.toggle('opacity-100');
                 }
             });
 
@@ -148,17 +147,17 @@ demos.forEach(demo => {
             });
 
             audio.addEventListener('ended', () => {
-                playIcon.textContent = '&#xf04b;';
+                playIcon.className = 'fa-solid fa-play ml-1';
                 container.classList.remove('player-active');
-                eqIndicator.classList.remove('opacity-100');
+                eqIndicator.classList.toggle('opacity-100');
                 seekBar.value = 0;
                 seekBar.style.background = '#1b2845';
             });
 
             const updateVolumeUI = (val) => {
-                if (val === 0) volIcon.className = 'fa-solid fa-volume-xmark text-base w-5 text-center';
-                else if (val < 0.5) volIcon.className = 'fa-solid fa-volume-low text-base w-5 text-center';
-                else volIcon.className = 'fa-solid fa-volume-high text-base w-5 text-center';
+                if (val === 0) volIcon.className = 'fa-solid fa-volume-xmark';
+                else if (val < 0.5) volIcon.className = 'fa-solid fa-volume-low';
+                else volIcon.className = 'fa-solid fa-volume-high text-base';
                 
                 const percentage = val * 100;
                 volBar.style.background = `linear-gradient(to right, #10b981 ${percentage}%, #1b2845 ${percentage}%)`;
