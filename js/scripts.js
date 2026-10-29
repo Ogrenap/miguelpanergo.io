@@ -5,13 +5,13 @@ const demos = [
         category: 'Animation • Video Games • Dubbing',
         url: 'demos/miguel-panergo-animation-demo.mp3'
     }
-    ,
-    {
-        id: 'demo-commercial',
-        title: 'Commercial Demo',
-        category: 'Friendly • Comforting • Pragmatic',
-        url: '.demos/Miguel Panergo Commercial Demo.mp3'
-    }
+    // ,
+    // {
+    //     id: 'demo-commercial',
+    //     title: 'Commercial Demo',
+    //     category: 'Friendly • Comforting • Pragmatic',
+    //     url: '.demos/Miguel Panergo Commercial Demo.mp3'
+    // }
     //,
     // {
     //     id: 'demo-animation',
