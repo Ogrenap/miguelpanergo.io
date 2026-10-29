@@ -5,22 +5,26 @@ const demos = [
         category: 'Animation • Video Games • Dubbing',
         url: 'demos/miguel-panergo-animation-demo.mp3'
     }
-    // ,
-    // {
-    //     id: 'demo-animation',
-    //     title: 'Animation Demo',
-    //     url: '.demos/Miguel Panergo Commercial Demo.mp3'
-    // },
+    ,
+    {
+        id: 'demo-commercial',
+        title: 'Commercial Demo',
+        category: 'Friendly • Comforting • Pragmatic',
+        url: '.demos/Miguel Panergo Commercial Demo.mp3'
+    }
+    //,
     // {
     //     id: 'demo-animation',
     //     title: 'Animation Demo',
     //     url: '.demos/Miguel Panergo Video Game Demo.mp3'
-    // },
+    // }
+    //,
     // {
     //     id: 'studio-sample',
     //     title: 'Home Studio Sample',
     //     url: '.demos/Miguel Panergo Home Studio Sample.mp3'
-    // },
+    // }
+    //,
 ];
 const playlistContainer = document.getElementById('audio-playlist');
 let currentAudioElement = null;
@@ -60,7 +64,7 @@ demos.forEach((demo) => {
                         </div>
                         
                         <div class="progress-details">
-                            <input type="range" class= "progress-bar" id="seek-${demo.id}" value="0" min="0" step="1" class="w-full" aria-label="Seek audio">
+                            <input type="range" class= "progress-bar" id="seek-${demo.id}" value="0" min="0" step="0.1" class="w-full" aria-label="Seek audio">
                         </div>
                     </div>
                     

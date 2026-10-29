@@ -461,7 +461,6 @@
     justify-content: center;
     max-width: var(--two-thirds-content-width);
     padding: var(--padding-large);
-    gap: var(--padding-medium);
     margin: 0 auto;
 
   }
@@ -534,15 +533,12 @@
     gap: var(--padding-medium);
     border-radius: 1rem;
     width: 100%;
-    margin: none;
+    margin-top: var(--padding-medium);
     padding: var(--padding-medium);
     background-color: var(--bg-second);
     @media (max-width: 963px) {
-
     }
   }
-
-
 
   .audio-info{
     display: flex;
