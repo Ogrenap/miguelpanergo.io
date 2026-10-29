@@ -3,7 +3,7 @@ const demos = [
         id: 'demo-animation',
         title: 'Animation Demo',
         category: 'Animation • Video Games • Dubbing',
-        url: '.demos/Miguel Panergo Demo - FINAL.mp3'
+        url: 'demos/miguel-panergo-animation-demo.mp3'
     }
     // ,
     // {
@@ -23,7 +23,7 @@ const demos = [
     // },
 ];
 const playlistContainer = document.getElementById('audio-playlist');
-let currrentAudioElement = null;
+let currentAudioElement = null;
 let currentContainer = null;
 
 const formatTime = (time) => {
@@ -38,7 +38,7 @@ demos.forEach((demo) => {
                 <div id="container-${demo.id}" class="audio-player">
                     
                     <button id="btn-${demo.id}" class="play_pause_btn" aria-label="Play ${demo.title}">
-                        <i class="fas" id="icon-${demo.id}">&#xf04b;</i>
+                        <i class="fa-solid fa-play ml-1" id="icon-${demo.id}"></i>
                     </button>
                     
                     <div class="audio-info">
@@ -148,7 +148,7 @@ demos.forEach(demo => {
             });
 
             audio.addEventListener('ended', () => {
-                playIcon.className = 'fa-solid fa-play ml-1';
+                playIcon.textContent = '&#xf04b;';
                 container.classList.remove('player-active');
                 eqIndicator.classList.remove('opacity-100');
                 seekBar.value = 0;
