@@ -186,12 +186,13 @@
     color: var(--text)
   }
   .BIGGER{
-    font-size: 4rem;
+    font-size: clamp(3rem, 5vw, 4rem);
     color: inherit;
     font-weight: var(--font-weight);
     font-family: "Young Serif", sans-serif;
     text-shadow: inherit;
     text-shadow: 2px 2px 2px var(--brand-500);
+  
   }
 
   a /* Links */{
@@ -322,6 +323,7 @@
     background-color: var(--bg-foot-head);
     padding-inline: var(--padding-large);
     padding-block: var(--padding-small);
+    border-bottom: 1px solid var(--bg-prime);
   }
   .nav-container {
     display: flex;
@@ -493,6 +495,10 @@
     padding: var(--padding-medium);
     background-color: var(--comp-beige-opacity);
     border-radius: 1rem;
+    @media (max-width: 963px) {
+      min-width: auto;
+    }
+    
   }
   .equipment-container-background {
     content: "";
@@ -537,6 +543,8 @@
     padding: var(--padding-medium);
     background-color: var(--bg-second);
     @media (max-width: 963px) {
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -549,11 +557,28 @@
   }
   .audio-title{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
     flex: 1 1 auto;
     color: var(--comp-beige);
+  }
+
+  .audio-title-eq{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding-small);
+  }
+
+  .audio-category-time{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    width: 100%;
   }
 
   .eq{
@@ -708,7 +733,8 @@
   --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   .find-me{
     background-color: var(--bg-prime);
-    width: 100%
+    width: 100%;
+    border-top: 1px solid var(--bg-foot-head);
   }
   .find-me-container {
     display: flex;
@@ -771,21 +797,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: var(--comp-beige);
 
   }
   .contact-label{
     display: flex;
-    flex-wrap: none;
     align-items: center;
+    align-content: center;
     color: var(--comp-gold);
     margin: 0 auto;
+    gap: 10px;
     text-shadow: 2px 2px 4px var(--brand-500);
+    @media (max-width: 635px) {
+      flex-direction: column;
+      gap: 0;
+    }
   }
   .contact-form {
     display: flex;
     max-width: var(--max-content-width);
-    min-width: var(--min-content-width);
     flex-direction: column;
     gap: 1rem;
     background-color: var(--bg-prime);
@@ -802,6 +833,7 @@
   .form-row{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--padding-medium);
     color: var(--comp-gold);
     font-size: var(--size-text-sm);

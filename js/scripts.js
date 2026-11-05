@@ -48,7 +48,7 @@ demos.forEach((demo) => {
                     <div class="audio-info">
                         <div class="audio-title">
                             <div>
-                                <div class="audio-title">
+                                <div class="audio-title-eq">
                                     <h3 class="label-sm">${demo.title}</h3>
                                     <div id="eq-${demo.id}" class="eq
                                     // eq-bars opacity-0 transition-opacity duration-300
@@ -56,10 +56,14 @@ demos.forEach((demo) => {
                                         <span></span><span></span><span></span><span></span>
                                     </div>
                                 </div>
-                                <p class="sub-label">${demo.category}</p>
                             </div>
-                            <div class="time-display" id="time-${demo.id}">
+                            <div class="audio-category-time">
+                                <div class="audio-category">
+                                    <p class="sub-label">${demo.category}</p>
+                                </div>
+                                <div class="time-display" id="time-${demo.id}">
                                 0:00 / 0:00
+                                </div>
                             </div>
                         </div>
                         
