@@ -3,7 +3,7 @@ const demos = [
         id: 'demo-animation',
         title: 'Animation Demo',
         category: 'Animation • Video Games • Dubbing',
-        url: 'demos/miguel-panergo-animation-demo.mp3'
+        url: 'audio/miguel-panergo-animation-demo.mp3'
     }
     // ,
     // {
@@ -30,6 +30,7 @@ const playlistContainer = document.getElementById('audio-playlist');
 let currentAudioElement = null;
 let currentContainer = null;
 
+
 const formatTime = (time) => {
     if(isNaN(time)) return "0:00";
     const minutes = Math.floor(time / 60);
@@ -50,10 +51,8 @@ demos.forEach((demo) => {
                             <div>
                                 <div class="audio-title-eq">
                                     <h3 class="label-sm">${demo.title}</h3>
-                                    <div id="eq-${demo.id}" class="eq
-                                    // eq-bars opacity-0 transition-opacity duration-300
-                                    " aria-hidden="true">
-                                        <span></span><span></span><span></span><span></span>
+                                    <div id="eq-${demo.id}" class="eq" aria-hidden="true">
+                                    <span></span><span></span><span></span><span></span>
                                     </div>
                                 </div>
                             </div>
@@ -131,22 +130,47 @@ demos.forEach(demo => {
                     currentAudioElement.pause();
                     const oldId = currentAudioElement.id.replace('audio-', '');
                     document.getElementById(`icon-${oldId}`).className = 'fa-solid fa-play ml-1';
-                    document.getElementById(`eq-${oldId}`).classList.toggle('opacity-100');
+                    document.getElementById(`eq-${oldId}`).style.height = '6px';
                     currentContainer.classList.remove('player-active');
+
                 }
 
                 if (audio.paused) {
                     audio.play();
                     playIcon.className = 'fa-solid fa-pause';
                     container.classList.add('player-active');
-                    eqIndicator.classList.toggle('opacity-100');
+                    document.getElementById(`eq-${demo.id}`).style.height = '20px';
+                    document.getElementById(`eq-${demo.id}`).style.animation = 'eq-pump 1s ease-in-outinfinite';
+                    for (let i = 0; i < 4; i++) {
+                        const bar = document.getElementById(`eq-${demo.id}`).children[i];
+                        bar.style.animation = `eq-pump 1s ease-in-out ${i * -0.2}s infinite`;
+                        if(i == 0) {
+                            bar.style.animation = `eq-pump 1s ease-in-out ${i * -0.8}s infinite`;
+                        }
+                        else if(i == 1) {
+                            bar.style.animation = `eq-pump 1s ease-in-out ${i * -0.4}s infinite`;
+                        }
+                        else if(i == 2) {
+                            bar.style.animation = `eq-pump 1s ease-in-out ${i * -0.6}s infinite`;
+                        }
+                        else if(i == 3) {
+                            bar.style.animation = `eq-pump 1s ease-in-out ${i * -0.2}s infinite`;
+                        }
+                        bar.style.animationPlayState = 'running';
+                    }
                     currentAudioElement = audio;
                     currentContainer = container;
+                
                 } else {
                     audio.pause();
                     playIcon.className = 'fa-solid fa-play ml-1';
                     container.classList.remove('player-active');
-                    eqIndicator.classList.toggle('opacity-100');
+                    document.getElementById(`eq-${demo.id}`).style.height = '6px';
+                    document.getElementById(`eq-${demo.id}`).style.animationPlayState = 'paused';
+                    for (let i = 0; i < 4; i++) {
+                        const bar = document.getElementById(`eq-${demo.id}`).children[i];
+                        bar.style.animation = 'none';
+                    }
                 }
             });
 
@@ -157,7 +181,7 @@ demos.forEach(demo => {
             audio.addEventListener('ended', () => {
                 playIcon.className = 'fa-solid fa-play ml-1';
                 container.classList.remove('player-active');
-                eqIndicator.classList.toggle('opacity-100');
+                document.getElementById(`eq-${demo.id}`).style.height = '6px';
                 seekBar.value = 0;
                 seekBar.style.background = '#1b2845';
             });
